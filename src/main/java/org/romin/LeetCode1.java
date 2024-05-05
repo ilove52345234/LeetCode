@@ -58,14 +58,25 @@ import org.junit.Test;
 
 public class LeetCode1 {
 
+
+    int[] nums = {2, 7, 11, 15};
+
     @Test
     public void test() {
-        twoSum(new int[]{2, 7, 11, 15}, 9);
+        int target = 9;
+        int[] result = twoSum(nums, target);
+        System.out.println(result[0] + " " + result[1]);
     }
 
 
     public int[] twoSum(int[] nums, int target) {
-        return null;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (i != j && nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{};
     }
-
 }
